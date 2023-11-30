@@ -1,210 +1,271 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>My Biodata</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="jquery.min.js"></script>
-        <link href="jquery.page.css" rel="stylesheet">
-        <script src="jquery.page.js"></script>
-        <style>
-            body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-            /* Set the margin from the bottom 12px */
-            .w3-row-padding img {margin-bottom: 12px}
-            /* Set the width of the sidebar to 120px */
-            .w3-sidebar {width: 120px;background: #222;}
-            /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-            #main {margin-left: 120px}
-            /* Remove margins from "page content" on small screens */
-            @media only screen and (max-width: 600px) {#main {margin-left: 0}}
-        </style>
-    </head>
-    <body class="w3-black"> 
-        <!-- Icon Bar (Sidebar - hidden on small screens) -->
-        <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-            <!-- Avatar image in top left corner -->
-            <img src="profile_pic.jpg" style="width:100%">
-            <!-- Link to section of the page -->
-            <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-                <!-- Add home icon -->
-                <i class="fa fa-home w3-xxlarge"></i>
-                <p>HOME</p>
-            </a>
-            <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-                <i class="fa fa-user w3-xxlarge"></i>
-                <p>ABOUT</p>
-            </a>
-            <a href="#interest" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-                <i class="fa fa-gamepad w3-xxlarge"></i>
-                <p>INTERESTS</p>
-            </a>
-            <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-                <i class="fa fa-envelope w3-xxlarge"></i>
-                <p>CONTACT</p>
-            </a>
-        </nav>
 
-        <!-- Navbar on small screens (Hidden on medium and large screens) it changes from left to top -->
-        <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-            <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-                <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-                <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-                <a href="#interest" class="w3-bar-item w3-button" style="width:25% !important">INTERESTs</a>
-                <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
-            </div>
+<head>
+    <title>My Biodata</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add these bootstrap from w3Schools -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Add these javascript -->
+    <script src="script.js"></script>
+    <style>
+        /* Set the font-family */
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
+
+        /* Set the margin from the bottom 12px */
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+
+        /* Set the width of the sidebar to 120px */
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+
+        /* Hide sections initially */
+        .w3-content {
+            display: none;
+        }
+
+        /* Add smooth transition effect */
+        .w3-content {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+        #main {
+            margin-left: 120px
+        }
+
+        /* Remove margins from "page content" on small screens */
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0
+            }
+        }
+    </style>
+</head>
+
+<body class="w3-black">
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <!-- Avatar image in top left corner -->
+        <img src="profile_pic.jpg" style="width:100%">
+        <!-- Link to section of the page -->
+        <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <!-- Add home icon -->
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>HOME</p>
+        </a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-user w3-xxlarge"></i>
+            <p>ABOUT</p>
+        </a>
+        <a href="#interest" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-gamepad w3-xxlarge"></i>
+            <p>INTERESTS</p>
+        </a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-envelope w3-xxlarge"></i>
+            <p>CONTACT</p>
+        </a>
+    </nav>
+
+    <!-- Navbar on small screens (Hidden on medium and large screens) it changes from left to top -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="#home" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+            <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+            <a href="#interest" class="w3-bar-item w3-button" style="width:25% !important">INTERESTs</a>
+            <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
         </div>
+    </div>
 
-        <!-- Page Content -->
-        <div class="w3-padding-large" id="main">
-            <!-- Header/Home -->
-            <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-                <!-- Big sentence and the I'm will be gone on smaller screens -->
-                <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Ari Jaya Teguh.</h1>
-                <p>NIM: 2702403996</p>
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+        <!-- Header/Home -->
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+            <!-- Big sentence and the I'm will be gone on smaller screens -->
+            <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Ari Jaya Teguh.</h1>
+            <p>NIM: 2702403996</p>
+            <br>
+            <!-- Profile picture size -->
+            <img src="profile_pic.jpg" alt="boy" class="w3-image" width="250" style="border-radius: 50%;">
+        </header>
+
+        <!-- About Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+            <h2 class="w3-text-light-grey">About Me</h2>
+            <!-- The white line under about me -->
+            <hr style="width:200px" class="w3-opacity">
+            <p>
+                I am a student in Binus International. I like to play video games and watch anime.
+                I normally play FPS games such as Valorant and Counter Strike.
+                The genre of anime that I like the most is fantasy and comedy.
+            </p>
+            <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+            <p class="w3-wide">Photoshop</p>
+            <!-- Make the progress bar which has 65% of the bar grey -->
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:65%"></div>
+            </div>
+            <p class="w3-wide">Excel</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+            </div>
+            <p class="w3-wide">Python</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:60%"></div>
+            </div>
+            <p class="w3-wide">C</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:25%"></div>
+            </div><br>
+
+            <!-- Education -->
+            <h3 class="w3-padding-24 w3-text-light-grey">My Education</h3>
+            <!-- Education logo -->
+            <img src="book.png" alt="Book Icon" class="w3-left w3-circle w3-margin-right" style="width:80px">
+            <!-- Links to the education above -->
+            <p class="w3-text-white">
+                <a href="https://www.santa-laurensia.com" target="_blank" class="w3-hover-text-aqua">Santa
+                    Laurensia</a>
                 <br>
-                <!-- Profile picture size -->
-                <img src="profile_pic.jpg" alt="boy" class="w3-image" width="250" style="border-radius: 50%;">
-            </header>
-
-            <!-- About Section -->
-            <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-                <h2 class="w3-text-light-grey">About Me</h2>
-                <!-- The white line under about me -->
-                <hr style="width:200px" class="w3-opacity">
-                <p>
-                    I am a student in Binus International. I like to play video games and watch anime. 
-                    I normally play FPS games such as Valorant and Counter Strike. 
-                    The genre of anime that I like the most is fantasy and comedy.
-                </p>
-                <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
-                <p class="w3-wide">Photoshop</p>
-                <!-- Make the progress bar which has 65% of the bar grey -->
-                <div class="w3-white">
-                    <div class="w3-dark-grey" style="height:28px;width:65%"></div>
-                </div>
-                <p class="w3-wide">Excel</p>
-                <div class="w3-white">
-                    <div class="w3-dark-grey" style="height:28px;width:80%"></div>
-                </div>
-                <p class="w3-wide">Python</p>
-                <div class="w3-white">
-                    <div class="w3-dark-grey" style="height:28px;width:60%"></div>
-                </div>
-                <p class="w3-wide">C</p>
-                <div class="w3-white">
-                    <div class="w3-dark-grey" style="height:28px;width:25%"></div>
-                </div><br>
-
-                <!-- Education -->
-                <h3 class="w3-padding-24 w3-text-light-grey">My Education</h3>  
-                <!-- Education logo -->
-                <img src="book.png" alt="Book Icon" class="w3-left w3-circle w3-margin-right" style="width:80px">
-                <!-- Links to the education above -->
-                <p class="w3-text-white">
-                    <a href="https://www.santa-laurensia.com" target="_blank" class="w3-hover-text-aqua">Santa Laurensia</a> 
-                    <br> 
-                    <a href="https://international.binus.ac.id" target="_blank" class="w3-hover-text-aqua">Binus International University</a>
-                    <br>
-                    <a href="https://international.binus.ac.id/computer-science/" target="_blank" class="w3-hover-text-aqua">Computer Science</a>
-                </p>
+                <a href="https://international.binus.ac.id" target="_blank" class="w3-hover-text-aqua">Binus
+                    International University</a>
+                <br>
+                <a href="https://international.binus.ac.id/computer-science/" target="_blank"
+                    class="w3-hover-text-aqua">Computer Science</a>
+            </p>
             <!-- End About Section -->
-            </div>
-
-            <!-- Interest Section -->
-            <div class="w3-padding-64 w3-content" id="interest">
-                <h2 class="w3-text-light-grey">My Interests</h2>
-                <!-- Add the line -->
-                <hr style="width:200px" class="w3-opacity">
-                <!-- Add pictures icon and links to other page  -->
-                <div>
-                    <h3 class="w3-padding-24 w3-text-light-grey">Color</h3>  
-                    <img src="color.png" alt="Color Icon" class="w3-left w3-circle w3-margin-right" style="width:80px">
-                    <p>Black <br> Blue <br> White</p>
-
-                    <a href="anime_W3.html">
-                        <h3 class="w3-padding-24 w3-text-light-grey w3-hover-text-aqua"">
-                            Anime
-                            <img src="anime.png" alt="Anime Icon" class="w3-left w3-circle w3-margin-right" style="width:80px">
-                        </h3>
-                    </a>
-                    <a href="food_W3.html">
-                        <h3 class="w3-padding-24 w3-text-light-grey w3-hover-text-aqua">
-                            Food
-                            <img src="food.png" alt="Food Icon" class="w3-left w3-circle w3-margin-right" style="width:80px">
-                        </h3>
-                    </a>
-                    <a href="game_W3.html">
-                        <h3 class="w3-padding-24 w3-text-light-grey w3-hover-text-aqua">
-                            Game
-                            <img src="game.png" alt="Game Icon" class="w3-left w3-circle w3-margin-right" style="width:80px">
-                        </h3>
-                    </a>
-                    <a href="kdrama_W3.html">
-                        <h3 class="w3-padding-24 w3-text-light-grey w3-hover-text-aqua">
-                            K-Drama
-                            <img src="kdrama.png" alt="Kdrama Icon" class="w3-left w3-circle w3-margin-right" style="width:80px">
-                        </h3>
-                    </a>
-                    <a href="movie_W3.html">
-                        <h3 class="w3-padding-24 w3-text-light-grey w3-hover-text-aqua">
-                            Movie
-                            <img src="movie.png" alt="Movie Icon" class="w3-left w3-circle w3-margin-right" style="width:80px">
-                        </h3>
-                    </a>
-                    <a href="sport_W3.html">
-                        <h3 class="w3-padding-24 w3-text-light-grey w3-hover-text-aqua">
-                            Sport
-                            <img src="sport.png" alt="Sport Icon" class="w3-left w3-circle w3-margin-right" style="width:80px">
-                        </h3>
-                    </a>
-                </div>
-            <!-- End Interest Section -->
-            </div>
-
-            <!-- Contact Section -->
-            <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-                <h2 class="w3-text-light-grey">Contact Me</h2>
-                <hr style="width:200px" class="w3-opacity">
-
-                <div class="w3-section">
-                    <!-- Shows icon and text -->
-                    <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Tangerang Selatan, Indonesia</p>
-                    <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +62 85813000479</p>
-                    <p><i class="fa fa-wechat fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Line: arijt</p>
-                    <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: ari.teguh@binus.ac.id</p>
-                </div><br>
-                <p>Let's get in touch. Send me a message:</p>
-                <!-- Form that will redirect to different tab -->
-                <form action="/action_page.php" target="_blank">
-                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-                    <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="Email"></p>
-                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-                    <!-- Button with a paper plane icon -->
-                    <p>
-                        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-                            <i class="fa fa-paper-plane"></i> SEND MESSAGE
-                        </button>
-                    </p>
-                </form>
-            <!-- End Contact Section -->
-            </div>
-  
-            <!-- Footer -->
-            <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-                <a href="https://github.com/Spacebone31?tab=repositories" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
-                <a href="https://www.instagram.com/arijayateguh/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-                <a href="https://steamcommunity.com/profiles/76561198154221784/" target="_blank"><i class="fa fa-steam w3-hover-opacity"></i></a>
-                <a href="https://open.spotify.com/user/hardlife3108" target="_blank"><i class="fa fa-spotify w3-hover-opacity"></i></a>
-                <a href="https://twitter.com/Spacebone31" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
-                <!-- Template Resources (bootstrap) -->
-                <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-            <!-- End footer -->
-            </footer>
-        <!-- END PAGE CONTENT -->
         </div>
-    </body>
+
+        <!-- Interest Section -->
+        <div class="w3-padding-64 w3-content" id="interest">
+            <h2 class="w3-text-light-grey">My Interests</h2>
+            <!-- Add the line -->
+            <hr style="width:200px" class="w3-opacity">
+            <!-- Add pictures icon and links to other page  -->
+            <div>
+                <h3 class="w3-padding-24 w3-text-light-grey">Color</h3>
+                <img src="color.png" alt="Color Icon" class="w3-left w3-circle w3-margin-right" style="width:80px">
+                <p>Black <br> Blue <br> White</p>
+                <!-- The color of the text is light grey and change to aqua when crusor is hovered over it, also adds padding -->
+                <a href="anime_W3.html">
+                    <h3 class="w3-padding-24 w3-text-light-grey w3-hover-text-aqua">
+                        Anime
+                        <img src=" anime.png" alt="Anime Icon" class="w3-left w3-circle w3-margin-right"
+                            style="width:80px">
+                    </h3>
+                </a>
+                <a href="food_W3.html">
+                    <h3 class="w3-padding-24 w3-text-light-grey w3-hover-text-aqua">
+                        Food
+                        <img src="food.png" alt="Food Icon" class="w3-left w3-circle w3-margin-right"
+                            style="width:80px">
+                    </h3>
+                </a>
+                <a href="game_W3.html">
+                    <h3 class="w3-padding-24 w3-text-light-grey w3-hover-text-aqua">
+                        Game
+                        <img src="game.png" alt="Game Icon" class="w3-left w3-circle w3-margin-right"
+                            style="width:80px">
+                    </h3>
+                </a>
+                <a href="kdrama_W3.html">
+                    <h3 class="w3-padding-24 w3-text-light-grey w3-hover-text-aqua">
+                        K-Drama
+                        <img src="kdrama.png" alt="Kdrama Icon" class="w3-left w3-circle w3-margin-right"
+                            style="width:80px">
+                    </h3>
+                </a>
+                <a href="movie_W3.html">
+                    <h3 class="w3-padding-24 w3-text-light-grey w3-hover-text-aqua">
+                        Movie
+                        <img src="movie.png" alt="Movie Icon" class="w3-left w3-circle w3-margin-right"
+                            style="width:80px">
+                    </h3>
+                </a>
+                <a href="sport_W3.html">
+                    <h3 class="w3-padding-24 w3-text-light-grey w3-hover-text-aqua">
+                        Sport
+                        <img src="sport.png" alt="Sport Icon" class="w3-left w3-circle w3-margin-right"
+                            style="width:80px">
+                    </h3>
+                </a>
+            </div>
+            <!-- End Interest Section -->
+        </div>
+
+        <!-- Contact Section -->
+        <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+            <h2 class="w3-text-light-grey">Contact Me</h2>
+            <!-- Adds a line under Contact Me text  -->
+            <hr style="width:200px" class="w3-opacity">
+
+            <div class="w3-section">
+                <!-- Shows icon and text and add margin to align the text cleanly -->
+                <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Tangerang
+                    Selatan,
+                    Indonesia</p>
+                <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +62 85813000479
+                </p>
+                <p><i class="fa fa-wechat fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Line: arijt</p>
+                <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email:
+                    ari.teguh@binus.ac.id</p>
+            </div><br>
+            <p>Let's get in touch. Send me a message:</p>
+            <!-- Form that will redirect to different tab -->
+            <form action="/action_page.php" target="_blank">
+                <!-- Add an input that has what the input is about inside the input (placeholder)  -->
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+                <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="Email"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject">
+                </p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message">
+                </p>
+                <!-- Button with a paper plane icon -->
+                <p>
+                    <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+                        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                    </button>
+                </p>
+            </form>
+            <!-- End Contact Section -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+            <!-- Link the icon to another website which goes into a new tab when clicked, and becomes darker when hovered -->
+            <a href="https://github.com/Spacebone31?tab=repositories" target="_blank"><i
+                    class="fa fa-github w3-hover-opacity"></i></a>
+            <a href="https://www.instagram.com/arijayateguh/" target="_blank"><i
+                    class="fa fa-instagram w3-hover-opacity"></i></a>
+            <a href="https://steamcommunity.com/profiles/76561198154221784/" target="_blank"><i
+                    class="fa fa-steam w3-hover-opacity"></i></a>
+            <a href="https://open.spotify.com/user/hardlife3108" target="_blank"><i
+                    class="fa fa-spotify w3-hover-opacity"></i></a>
+            <a href="https://twitter.com/Spacebone31" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+            <!-- Template Resources (bootstrap) (https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_dark_portfolio&stacked=h)-->
+            <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"
+                    class="w3-hover-text-green">w3.css</a></p>
+            <!-- End footer -->
+        </footer>
+        <!-- END PAGE CONTENT -->
+    </div>
+
+</body>
+
 </html>
